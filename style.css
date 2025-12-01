@@ -1,0 +1,384 @@
+/* ===========================
+   Digz E-Portfolio — style.css
+   Shared across all pages
+   =========================== */
+
+/* ====== FONT: add your TTF file in assets/fonts and adjust @font-face name ====== */
+/* Example: assets/fonts/MyCustomFont.ttf */
+@font-face {
+  font-family: 'MyCustomFont';
+  src: url('Assets/Fonts/Mostwasted.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+/* Use .custom-font on elements you want to apply the TTF to */
+.custom-font { font-family: 'MyCustomFont', system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif; }
+
+/* ====== Basic reset and theme ====== */
+:root{
+  --bg: #0b0b0b;
+  --panel: rgba(20,20,20,0.65);
+  --accent: #ff7a00; /* orange */
+  --accent-glow: rgba(255,122,0,0.25);
+  --glass: rgba(0,0,0,0.45);
+  --text: #eee;
+  --muted: #cfcfcf;
+  --nav-height: 72px;
+}
+
+/* page background: change to your custom background-image if you want:
+   body { background-image: url('assets/img/your-bg.png'); background-size:cover; }
+*/
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: Inter, Arial, sans-serif;
+  color: var(--text);
+  background: var(--bg) center/cover no-repeat fixed;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+}
+
+/* Topbar (full-width) with glowing orange border */
+.topbar {
+  position: fixed;
+  left:0; right:0; top:0;
+  height: var(--nav-height);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  z-index: 1000;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.6);
+  border-bottom: 2px solid rgba(255,255,255,0.02);
+  background: rgba(0,0,0,.75);
+  padding: 8px 16px;
+  border: 2px solid transparent;
+  /* glowing border effect */
+  box-shadow: 0 0 18px rgba(0,0,0,0.6), 0 0 28px rgba(0,0,0,0.3);
+}
+.topbar-inner {
+  width: 100%;
+  max-width: 1200px;
+  display:flex;
+  align-items:center;
+  gap: 12px;
+  justify-content:space-between;
+  position:relative;
+}
+
+/* The orange glowing border around the entire nav */
+.topbar::before{
+  content:"";
+  position:absolute;
+  inset: -4px; /* extend beyond nav */
+  border-radius: 8px;
+  background: linear-gradient(90deg, rgba(255,122,0,0.08), rgba(255,122,0,0.02));
+  box-shadow: 0 0 18px rgba(255,122,0,0.22);
+  z-index: -1;
+}
+
+/* Title */
+.site-title{
+  font-weight:700;
+  letter-spacing: 2px;
+  font-size: 5rem;
+  text-align:center;
+}
+
+/* NAV buttons (right) */
+.topbar-right {
+  display:flex;
+  gap: 8px;
+  align-items:center;
+}
+.nav-btn{
+  background: transparent;
+  border: none;
+  color:var(--text);
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:6px;
+  font-size:0.8rem;
+  padding:6px 10px;
+  cursor:pointer;
+  transition: transform .22s ease, box-shadow .22s ease;
+  outline: none;
+}
+.nav-btn img{ width: 28px; height:28px; display:block; object-fit:contain; filter: drop-shadow(0 2px 6px rgba(0,0,0,0.6)); }
+.nav-btn:hover{
+  transform: translateY(-6px);
+  box-shadow: 0 8px 24px var(--accent-glow);
+}
+
+/* Mobile dropdown */
+.mobile-menu { display:none; position:relative; }
+.mobile-dropdown {
+  position:absolute; top:48px; right:0;
+  background: rgba(10,10,10,0.95);
+  border-radius:8px;
+  padding:8px;
+  display:none;
+  min-width:160px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.7);
+}
+.mobile-dropdown button{ display:block; width:100%; margin:6px 0; }
+
+/* Page layout container */
+.container {
+  max-width: 1200px;
+  margin: calc(var(--nav-height) + 40px) auto 80px;
+  padding: 24px;
+  display:grid;
+  grid-template-columns: 320px 1fr;
+  gap: 24px;
+}
+
+/* PROFILE CARD */
+.profile-card {
+  background: rgba(0, 0, 0, 0.75);
+  border-radius: 12px;
+  padding: 14px;
+  border: 1px solid rgba(0, 0, 0, 0.75);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.75);
+}
+.profile-top { display:flex; gap:12px; align-items:center; }
+.profile-photo { width:286px; height:286px; border-radius:12px; object-fit:cover; border:2px solid rgba(0, 0, 0, 0.04); }
+.profile-name { margin:0; font-size:1.1rem; }
+.profile-name-digz { margin:0; font-size:2rem; }
+.profile-sub { margin:0; font-size:0.9rem; font-weight:500; color:var(--muted); }
+.profile-motto { margin-top:10px; color:var(--muted); font-size:0.95rem; }
+
+/* TV frame / video */
+.tv-section { display:flex; align-items:center; justify-content:center; }
+.tv-frame{
+  width:100%;
+  min-height:240px;
+  border-radius:12px;
+  overflow:hidden;
+  padding:10px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.3));
+  box-shadow: inset 0 0 30px rgba(0,0,0,0.45);
+}
+.tv-frame video{ width:100%; height:100%; display:block; object-fit:cover; }
+
+/* HOME bottom right buttons */
+.home-actions {
+  position: fixed;
+  right: 18px;
+  bottom: 18px;
+  z-index: 700;
+}
+.action-btns {
+  display:flex;
+  gap:12px;
+  align-items:center;
+}
+.big-action {
+  width:120px;
+  height:120px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+  background: rgba(10,10,10,0.5);
+  border-radius:12px;
+  border: 1px solid rgba(255,255,255,0.03);
+  cursor:pointer;
+  transition: transform .22s ease, box-shadow .22s ease;
+  text-align:center;
+}
+.big-action img{ width:48px; height:48px; object-fit:contain; }
+.big-action span{ font-size:0.95rem; color:var(--text); }
+.big-action:hover{ transform: translateY(-8px); box-shadow: 0 12px 40px var(--accent-glow); }
+
+/* MODALS & backdrop */
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .22s ease;
+  z-index: 900;
+}
+.modal {
+  position: fixed;
+  left:50%; top:50%;
+  transform: translate(-50%,-50%) scale(.98);
+  min-width: 320px;
+  max-width: 920px;
+  background: rgba(0,0,0,0.6);
+  border-radius: 10px;
+  padding: 18px;
+  color:var(--text);
+  box-shadow: 0 10px 40px rgba(0,0,0,0.6);
+  border: 1px solid rgba(255,255,255,0.03);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .18s ease, transform .18s ease;
+  z-index: 1000;
+}
+.modal.modal-center { width: min(680px, 92%); }
+.modal.modal-large { width: min(980px, 96%); max-width:1200px; }
+.modal.modal-full { width: 96%; height: 88%; top:50%; }
+.modal .modal-close {
+  position:absolute; right:12px; top:8px; background:transparent; border:none; color:var(--text); font-size:20px; cursor:pointer;
+}
+.modal .modal-title { text-align:center; margin-top:6px; }
+.modal .modal-body { padding: 12px; color:var(--muted); }
+
+/* when modal is open - utilities applied by JS */
+.modal-backdrop.active { opacity:1; pointer-events:auto; }
+.modal.active { opacity:1; transform: translate(-50%,-50%) scale(1); pointer-events:auto; }
+
+/* Large modal content layout */
+.modal-content-large { display:flex; gap:18px; align-items:flex-start; }
+.modal-left { flex:1; }
+.modal-right { flex:1; display:flex; flex-direction:column; gap:12px; }
+.modal .car-box img, .modal .glowing img { width:100%; height:100%; object-fit:cover; }
+
+/* Achievements grid */
+.achievements-grid {
+  display:grid;
+  gap:18px;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  margin-top: 18px;
+}
+.achievement-card {
+  background: rgba(0,0,0,0.45);
+  border-radius:12px;
+  overflow:hidden;
+  display:flex;
+  flex-direction:column;
+  cursor:pointer;
+  transition: transform .2s ease, box-shadow .2s ease;
+  border: 1px solid rgba(255,255,255,0.03);
+  min-height: 220px;
+}
+.achievement-card:hover{ transform: translateY(-8px); box-shadow: 0 12px 36px var(--accent-glow); }
+.ach-thumb { width:100%; height:180px; overflow:hidden; background:#111; }
+.ach-thumb img { width:100%; height:100%; object-fit:cover; /* this crops images square-like */ }
+.ach-meta { padding:10px; }
+.ach-meta h3 { margin:0 0 6px 0; }
+.ach-meta p { margin:0; color:var(--muted); }
+
+/* CONTACTS grid */
+.contacts-grid { display:flex; gap:18px; justify-content:center; align-items:center; flex-wrap:wrap; padding: 24px 0; }
+.contact-card {
+  color : white;
+  width:210px;
+  height:120px;
+  border-radius:14px;
+  background: rgba(0, 0, 0, 0.6);
+  border: 1px solid rgba(255,255,255,0.03);
+  display:flex; align-items:center; justify-content:center; font-size:2.5rem; cursor:pointer;
+  transition: transform .18s ease, box-shadow .18s ease;
+}
+.contact-card:hover { transform: translateY(-8px); box-shadow: 0 12px 36px var(--accent-glow); }
+
+/* CONTACT modal content (large) */
+.modal-content-full { display:flex; height:100%; gap:18px; padding:16px; }
+.modal-left { flex:1; display:flex; flex-direction:column; gap:12px; align-items:flex-start; }
+.modal-right { width:320px; display:flex; align-items:center; justify-content:center; }
+.car-box { width:100%; height:360px; border-radius:8px; overflow:hidden; background:#111; border: 1px solid rgba(255,255,255,0.03); }
+.car-desc { color:var(--muted); margin-top:8px; font-size:1.05rem; max-width:640px; }
+.profile-circle {
+  width:360px; height:360px; border-radius:50%; overflow:hidden; border:4px solid rgba(255,255,255,0.04);
+  display:flex; align-items:center; justify-content:center; cursor:pointer;
+  transition: transform .18s ease, box-shadow .18s ease;
+}
+.profile-circle img { width:100%; height:100%; object-fit:cover; }
+.profile-circle:hover { transform: translateY(-6px); box-shadow: 0 12px 36px var(--accent-glow); }
+
+/* glowing helper */
+.glowing { box-shadow: 0 6px 36px rgba(255,122,0,0.12); border: 1px solid rgba(255,122,0,0.06); }
+
+/* MUSIC PLAYER */
+.music-player {
+  position: fixed;
+  left: 18px;
+  bottom: 18px;
+  z-index: 800;
+  display:flex;
+  align-items:center;
+  gap:12px;
+  background: rgba(0,0,0,0.6);
+  border-radius:12px;
+  padding:10px;
+  border: 1px solid rgba(255,255,255,0.03);
+  box-shadow: 0 12px 36px rgba(0,0,0,0.6);
+}
+.album-art { width:72px; height:72px; border-radius:8px; object-fit:cover; }
+.song-title { width:210px; background:transparent; border:none; color:var(--text); outline:none; font-size:0.95rem; }
+.player-controls { display:flex; gap:8px; }
+.player-btn { background: transparent; border:none; color:var(--text); cursor:pointer; font-size:20px; }
+
+
+
+/* smaller screens */
+@media (max-width: 900px) {
+  .container { grid-template-columns: 1fr; margin-top: calc(var(--nav-height) + 18px); padding: 12px; }
+  .topbar { padding: 6px 10px; }
+  .topbar-right { display:none; }
+  .mobile-menu { display:block; }
+  .mobile-dropdown { right: 8px; }
+  .home-actions { right: 8px; bottom: 12px; }
+  .action-btns { gap:8px; }
+  .big-action { width:86px; height:86px; }
+  .album-art { width:56px; height:56px; }
+  .song-title { width:140px; }
+  .modal.modal-large { width: 96%; height:auto; }
+}
+
+/* responsive helper to pin mobile menu */
+.mobile-dropdown.show { display:block; }
+
+/* Home PAGE BACKGROUND */
+.page-home {
+    background-image: url("Assets/Images/HomeBG.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* Achievement PAGE BACKGROUND */
+.page-achievements {
+    background-image: url("Assets/Images/FlexBG.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* Contacts PAGE BACKGROUND */
+.page-contacts {
+    background-image: url("Assets/Images/BlogBG.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+/* Page headings (Achievements, Contacts, etc.) */
+.page-heading-contacts {
+    font-size: 5rem;      /* adjust the size */
+    font-weight: 600;     /* adjust weight: 400-normal, 700-bold */
+    color: var(--text);   /* text color */
+    margin-bottom: 24px;  /* spacing below */
+    letter-spacing: 1px;  /* optional */
+    text-align: center;   /* optional, centers the title */
+}
+.page-heading-achievements {
+    font-size: 3.5rem;      /* adjust the size */
+    font-weight: 700;     /* adjust weight: 400-normal, 700-bold */
+    color: var(--text);   /* text color */
+    margin-bottom: 24px;  /* spacing below */
+    letter-spacing: 1px;  /* optional */
+    text-align: center;   /* optional, centers the title */
+}
+.profile-motto {
+    font-family: 'MyCustomFont', system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+    color: white;
+    font-weight: 500;
+    font-size: 2rem;
+}

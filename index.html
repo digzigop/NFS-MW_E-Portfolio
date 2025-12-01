@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Digz : E-Portfolio — Home</title>
+
+  <!-- Shared CSS -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Place your favicon if you want -->
+</head>
+<body class="page-home">
+  <!-- BACKGROUND: put your custom background-image on body via inline style or CSS.
+       Example:
+         <body style="background-image:url('assets/img/my-bg.png')">
+       Or edit the CSS file where indicated.
+  -->
+
+  <!-- GLOBAL NAVBAR (same markup on all pages) -->
+  <header class="topbar" id="topbar">
+    <div class="topbar-inner">
+      <div class="topbar-left">
+        <!-- left space (can add logo if needed) -->
+      </div>
+
+      <div class="topbar-center">
+        <div class="site-title custom-font">Digz : E-Portfolio</div>
+      </div>
+
+      <nav class="topbar-right" id="desktop-nav">
+        <button class="nav-btn nav-home" data-target="index.html">
+          <img src="Assets/Images/HomeIcon.png" alt="home icon"> <!-- <-- put icon here -->
+          <span>Home</span>
+        </button>
+        <button class="nav-btn nav-achievements" data-target="achievements.html">
+          <img src="Assets/Images/FlexIcon.png" alt="achievements icon">
+          <span>Achievements</span>
+        </button>
+        <button class="nav-btn nav-contacts" data-target="contacts.html">
+          <img src="Assets/Images/ContactsIcon.png" alt="contacts icon">
+          <span>Contacts</span>
+        </button>
+      </nav>
+
+      <!-- Mobile dropdown toggle -->
+      <div class="mobile-menu">
+        <button id="mobile-toggle" aria-label="Open menu">☰</button>
+        <div id="mobile-dropdown" class="mobile-dropdown">
+          <button class="mobile-link" data-target="index.html">Home</button>
+          <button class="mobile-link" data-target="achievements.html">Achievements</button>
+          <button class="mobile-link" data-target="contacts.html">Contacts</button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- MAIN CONTENT -->
+  <main class="container">
+    <!-- LEFT: Profile card -->
+    <aside class="profile-card">
+      <div class="profile-top">
+        <img class="profile-photo" src="Assets/Images/PFP_Home2.png" alt="Profile photo"> <!-- put your profile png here -->
+        <div class="profile-meta">
+          <h2 class="profile-name">Dbon</h2>
+          <h2 class="profile-name-digz custom-font">"Digz"</h2>
+          <h2 class="profile-name">Babanto</h2>
+          <br>
+          <p class="profile-sub">DOB: 10-19-2007</p>
+          <br>
+          <p class="profile-sub">Age: 18</p>
+          <br>
+          <p class="profile-sub">Address: Blk 3 Lot 4 NHA II, Casisang, Malaybalay City, Bukidnon</p>
+        </div>
+      </div>
+      <p class="profile-motto">"Poging batak mag coding, mas batak pang mag lambing."</p>
+    </aside>
+
+    <!-- RIGHT: TV video -->
+    <section class="tv-section">
+      <div class="tv-frame">
+        <!-- Put loop.mp4 in assets/mp4/ and edit src -->
+        <video loop muted autoplay playsinline id="tvVideo">
+          <source src="Assets/Media/Need For Speed Most Wanted (2005) - Intro.mp4" type="video/mp4">
+          <!-- fallback text -->
+        </video>
+      </div>
+    </section>
+
+    <!-- BOTTOM RIGHT: three big buttons (About, Education, Skills) -->
+    <div class="home-actions">
+      <div class="action-btns">
+        <button class="big-action" data-modal="modal-about">
+          <img src="Assets/Images/AboutMeIcon.png" alt="">
+          <span>About me</span>
+        </button>
+        <button class="big-action" data-modal="modal-education">
+          <img src="Assets/Images/EducationIcon.png" alt="">
+          <span>Education</span>
+        </button>
+        <button class="big-action" data-modal="modal-skills">
+          <img src="Assets/Images/SkillsIcon.png" alt="">
+          <span>Skills</span>
+        </button>
+      </div>
+    </div>
+  </main>
+
+  <!-- MODALS - Home page (About, Education, Skills) -->
+  <div class="modal-backdrop" id="modalBackdrop"></div>
+
+  <div class="modal modal-center" id="modal-about" aria-hidden="true">
+    <button class="modal-close">✕</button>
+    <h2 class="modal-title custom-font">About me</h2>
+    <div class="modal-body">
+      <p contenteditable="true" class="modal-text">My name is D'Vaughn Gray V. Babanto. My sports include Taekwondo, Basketball, Running and Cycling. Some of my hobbies include dancing, drawing, playing games and reading.</p>
+    </div>
+  </div>
+
+  <div class="modal modal-center" id="modal-education" aria-hidden="true">
+    <button class="modal-close">✕</button>
+    <h2 class="modal-title custom-font">Education</h2>
+    <div class="modal-body">
+      <p contenteditable="true" class="modal-text">Nursery - K2 (skipped K1) : Little Gems Learning Center</p>
+      <p contenteditable="true" class="modal-text">Grade 1 : Bethel Baptist Christian Academy</p>
+      <p contenteditable="true" class="modal-text">Grade 2 - Grade 6 : BSU ELS</p>
+      <p contenteditable="true" class="modal-text">Grade 7 - Grade 12 : BSU SLS</p>
+      <p contenteditable="true" class="modal-text">1st year college - ongoing (BSIT) : BSU</p>
+    </div>
+  </div>
+
+  <div class="modal modal-center" id="modal-skills" aria-hidden="true">
+    <button class="modal-close">✕</button>
+    <h2 class="modal-title custom-font">Skills</h2>
+    <div class="modal-body">
+      <p contenteditable="true" class="modal-text">Basics in C programming, HTML, CSS, JS.</p>
+      <p contenteditable="true" class="modal-text">Web design</p>
+      <p contenteditable="true" class="modal-text">Static website deployment</p>
+      <p contenteditable="true" class="modal-text">Project management</p>
+      <p contenteditable="true" class="modal-text">Media editing</p>
+    </div>
+  </div>
+
+  <!-- SHARED MUSIC PLAYER (bottom-left) -->
+  <div class="music-player" id="musicPlayer">
+    <img id="albumArt" class="album-art" src="assets/img/album1.png" alt="Album art"> <!-- album art placeholder -->
+    <input id="songTitle" class="song-title" value="Song Title (editable)" type="text"> <!-- editable song name -->
+    <div class="player-controls">
+      <button id="prevBtn" class="player-btn">⏮</button>
+      <button id="playBtn" class="player-btn">⏯</button>
+      <button id="nextBtn" class="player-btn">⏭</button>
+    </div>
+  </div>
+
+  <!-- AUDIO ELEMENTS (for music + sfx). They are controlled by JS. -->
+  <!-- DO NOT delete, just replace the placeholder file paths with your actual file names. -->
+  <audio id="musicAudio" preload="auto"></audio>
+
+  <!-- SFX audio objects (hover, click, open modal, close modal) -->
+  <audio id="sfx-hover" src="assets/mp3/sfx-hover.mp3" preload="auto"></audio>
+  <audio id="sfx-click" src="assets/mp3/sfx-click.mp3" preload="auto"></audio>
+  <audio id="sfx-open" src="Assets/Audio/Open.mp3" preload="auto"></audio>
+  <audio id="sfx-close" src="Assets/Audio/Close.mp3" preload="auto"></audio>
+
+  <!-- SHARED SCRIPT -->
+  <script src="script.js" defer></script>
+</body>
+</html>

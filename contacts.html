@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Digz : E-Portfolio — Contacts</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="page-contacts">
+
+  <header class="topbar" id="topbar">
+    <div class="topbar-inner">
+      <div class="topbar-left"></div>
+      <div class="topbar-center">
+        <div class="site-title custom-font">Digz : E-Portfolio</div>
+      </div>
+
+      <nav class="topbar-right" id="desktop-nav">
+        <button class="nav-btn nav-home" data-target="index.html">
+          <img src="Assets/Images/HomeIcon.png" alt="">
+          <span>Home</span>
+        </button>
+        <button class="nav-btn nav-achievements" data-target="achievements.html">
+          <img src="Assets/Images/FlexIcon.png" alt="">
+          <span>Achievements</span>
+        </button>
+        <button class="nav-btn nav-contacts" data-target="contacts.html">
+          <img src="Assets/Images/ContactsIcon.png" alt="">
+          <span>Contacts</span>
+        </button>
+      </nav>
+
+      <div class="mobile-menu">
+        <button id="mobile-toggle" aria-label="Open menu">☰</button>
+        <div id="mobile-dropdown" class="mobile-dropdown">
+          <button class="mobile-link" data-target="index.html">Home</button>
+          <button class="mobile-link" data-target="achievements.html">Achievements</button>
+          <button class="mobile-link" data-target="contacts.html">Contacts</button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="container contacts-main">
+    <h1 class="page-heading-contacts custom-font">Contact & Socials</h1>
+
+    <div class="contacts-grid">
+      <!-- Each button opens a large modal. 
+           data-type will determine modal content in JS. -->
+      <button class="contact-card custom-font" data-type="facebook">
+        <span>Facebook</span>
+      </button>
+
+      <button class="contact-card custom-font" data-type="instagram">
+        <span>Instagram</span>
+      </button>
+
+      <button class="contact-card custom-font" data-type="github">
+        <span>Github</span>
+      </button>
+
+      <button class="contact-card custom-font" data-type="email">
+        <span>Email</span>
+      </button>
+    </div>
+  </main>
+
+  <div class="modal-backdrop" id="modalBackdrop"></div>
+
+  <!-- CONTACT MODAL TEMPLATE: JS will populate content per button -->
+  <div class="modal modal-full" id="contactModal" aria-hidden="true">
+    <button class="modal-close">✕</button>
+    <div class="modal-content-full">
+      <div class="modal-left">
+        <div class="car-box glowing" id="contactCarBox">
+          <img id="contactCarImg" src="assets/img/car1.jpg" alt="car image">
+        </div>
+        <div class="car-desc" id="contactCarDesc">
+          Large description for the item. This will be replaced by JS based on button.
+        </div>
+      </div>
+
+      <div class="modal-right">
+        <div class="profile-circle" id="contactProfile" title="Open profile">
+          <img id="contactProfileImg" src="assets/img/profile.png" alt="profile">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MUSIC PLAYER -->
+  <div class="music-player" id="musicPlayer">
+    <img id="albumArt" class="album-art" src="assets/img/album1.png" alt="Album art">
+    <input id="songTitle" class="song-title" value="Song Title (editable)" type="text">
+    <div class="player-controls">
+      <button id="prevBtn" class="player-btn">⏮</button>
+      <button id="playBtn" class="player-btn">⏯</button>
+      <button id="nextBtn" class="player-btn">⏭</button>
+    </div>
+  </div>
+
+  <audio id="musicAudio" preload="auto"></audio>
+
+  <audio id="sfx-hover" src="Assets/Audio/OpenContacts.mp3" preload="auto"></audio>
+  <audio id="sfx-click" src="assets/mp3/sfx-click.mp3" preload="auto"></audio>
+  <audio id="sfx-open" src="Assets/Audio/Open.mp3" preload="auto"></audio>
+  <audio id="sfx-close" src="Assets/Audio/Close.mp3" preload="auto"></audio>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
