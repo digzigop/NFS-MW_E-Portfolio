@@ -7,7 +7,7 @@
 /* Example: assets/fonts/MyCustomFont.ttf */
 @font-face {
   font-family: 'MyCustomFont';
-  src: url('Assets/Fonts/Mostwasted.ttf') format('truetype');
+  src: url('Mostwasted.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -338,7 +338,7 @@ body {
 
 /* Home PAGE BACKGROUND */
 .page-home {
-    background-image: url("Assets/Images/HomeBG.jpg");
+    background-image: url("HomeBG.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -346,7 +346,7 @@ body {
 
 /* Achievement PAGE BACKGROUND */
 .page-achievements {
-    background-image: url("Assets/Images/FlexBG.jpg");
+    background-image: url("FlexBG.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -354,7 +354,7 @@ body {
 
 /* Contacts PAGE BACKGROUND */
 .page-contacts {
-    background-image: url("Assets/Images/BlogBG.jpg");
+    background-image: url("BlogBG.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
