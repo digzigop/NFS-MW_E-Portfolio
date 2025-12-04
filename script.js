@@ -10,11 +10,11 @@
 --------------------------------------------------*/
 
 const musicList = [
-  { src: "Assets/Audio/Do Ya Thing (feat. Young Dro) - P$C.mp3", art: "Assets/Images/DoYaThingImg.jpg", title: "Do Ya Thing (feat. Young Dro) - P$C" },
-  { src: "Assets/Audio/Fired Up - Hush.mp3", art: "Assets/Images/FiredUpImg.jpg", title: "Fired Up - Hush" },
-  { src: "Assets/Audio/Nine Thou (Grant Mohrman Superstars Remix) - Styles Of Beyond.mp3", art: "Assets/Images/NineThouImg.jpg", title: "Nine Thou (Grant Mohrman Superstars Remix) - Styles Of Beyond" },
-  { src: "Assets/Audio/Sets Go Up (feat. Wacko) - JUVENILE.mp3", art: "Assets/Images/SetsGoUpImg.jpg", title: "Sets Go Up (feat. Wacko) - JUVENILE" },
-  { src: "Assets/Audio/Tilted - Lupe Fiasco.mp3", art: "Assets/Images/TiltedImg.jpg", title: "Tilted - Lupe Fiasco" },
+  { src: "Do Ya Thing (feat. Young Dro) - P$C.mp3", art: "DoYaThingImg.jpg", title: "Do Ya Thing (feat. Young Dro) - P$C" },
+  { src: "Fired Up - Hush.mp3", art: "FiredUpImg.jpg", title: "Fired Up - Hush" },
+  { src: "Nine Thou (Grant Mohrman Superstars Remix) - Styles Of Beyond.mp3", art: "NineThouImg.jpg", title: "Nine Thou (Grant Mohrman Superstars Remix) - Styles Of Beyond" },
+  { src: "Sets Go Up (feat. Wacko) - JUVENILE.mp3", art: "SetsGoUpImg.jpg", title: "Sets Go Up (feat. Wacko) - JUVENILE" },
+  { src: "Tilted - Lupe Fiasco.mp3", art: "TiltedImg.jpg", title: "Tilted - Lupe Fiasco" },
 ];
 
 /* Contacts modal content mapping (edit URLs, images, descriptions)
@@ -22,27 +22,27 @@ const musicList = [
 */
 const contactData = {
   facebook: {
-    carImg: "Assets/Images/BMW M3 GTR.png",
+    carImg: "BMW M3 GTR.png",
     desc: "The BMW M3 GTR is Razor’s signature ride, combining precision handling with raw street dominance. Its lightweight chassis and high-revving inline-six engine make it perfect for weaving through Rockport’s tight corners while maintaining explosive acceleration. With a curb weight of around 3,400 pounds, it delivers razor-sharp handling and instant throttle response, allowing drivers to execute aggressive drifts and outrun both rivals and cops alike. This car is designed for those who want total control without sacrificing speed, making it one of the most balanced and formidable vehicles in the Blacklist.",
-    profileImg: "Assets/Images/PFP_FB.png",
+    profileImg: "PFP_FB.png",
     profileUrl: "https://facebook.com/dvaughn.babanto/"
   },
   instagram: {
-    carImg: "Assets/Images/Ford Mustang GT.png",
+    carImg: "Ford Mustang GT.png",
     desc: "Razor’s Ford Mustang GT represents pure American muscle, built for those who prefer raw power over finesse. Equipped with a large-block V8, this heavyweight machine produces brutal low-end torque and an unmistakable roar. The Mustang excels on long straights and rough urban roads, delivering aggressive acceleration and overwhelming force. Weighing significantly more than the M3 GTR, it is less nimble but dominates in raw speed and intimidation. This ride is perfect for tearing through traffic and making a statement on the streets of Rockport, embodying the unrefined fury of classic muscle cars.",
-    profileImg: "Assets/Images/PFP_IG&Git.png",
+    profileImg: "PFP_IG&Git.png",
     profileUrl: "https://instagram.com/digidigz/"
   },
   github: {
-    carImg: "Assets/Images/Porsche Carrera GT.png",
+    carImg: "Porsche Carrera GT.png",
     desc: "The Porsche Carrera GT is a mid-engine supercar built for precision, balance, and extreme speed. Its 5.7-liter V10 engine produces 605 horsepower and 435 lb-ft of torque, propelling the car from 0 to 60 mph in under 4 seconds with a top speed of around 205 mph. Lightweight at approximately 3,042 pounds, the Carrera GT offers razor-sharp handling, exceptional braking, and exhilarating cornering stability. Every drift, turn, and straightaway feels deliberate and controlled, making it one of the most formidable and versatile rides on Rockport streets.",
-    profileImg: "Assets/Images/PFP_IG&Git.png",
+    profileImg: "PFP_IG&Git.png",
     profileUrl: "https://github.com/digzigop/"
   },
   email: {
-    carImg: "Assets/Images/Lamborghini Gallardo.png",
+    carImg: "Lamborghini Gallardo.png",
     desc: "Hector “Ming” Domingo’s Lamborghini Gallardo is a predator on wheels, blending Italian exotic style with brutal performance. Its 5.0-liter V10 produces over 500 horsepower, launching the car from 0 to 60 mph in roughly 4 seconds, with a top speed approaching 200 mph. Weighing around 3,460 pounds, the Gallardo offers a perfect balance of agility and power, making it capable of both tight-corner precision and long-straight dominance. With AWD stability and mid-engine balance, this car delivers thrilling control and style, making it ideal for high-stakes races or evading relentless police pursuits.",
-    profileImg: "Assets/Images/PFP_Gmail.jpg",
+    profileImg: "PFP_Gmail.jpg",
     profileUrl: "https://mail.google.com/mail/?view=cm&fs=1&to=2501115796@student.buksu.edu.ph"
   }
 };
